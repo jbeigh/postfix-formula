@@ -1,4 +1,11 @@
 {% set postfix = salt['grains.filter_by']({
+    'CentOS': {
+        'package': 'postfix',
+        'policyd_spf_pkg': 'pypolicyd-spf',
+        'postgrey_pkg': 'postgrey',
+        'service': 'postfix',
+        'aliases_file': '/etc/aliases',
+    },
     'Debian': {
         'package': 'postfix',
         'policyd_spf_pkg': 'postfix-policyd-spf-python',
